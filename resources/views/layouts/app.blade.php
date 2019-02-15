@@ -30,7 +30,7 @@
       <tbody>
         <tr>
           <td class="align-middle">静的なTodoです</td>
-          <td class="align-middle">2018/01/01</td>
+          <td class="align-middle">2018/8/27</td>
           <td class="align-middle">2017/01/01</td>
           <td class="align-middle">2017/01/10</td>
           <td><a class="btn btn-primary" href="">編集</a></td>
