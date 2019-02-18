@@ -24,7 +24,7 @@
         <td><a class="btn btn-primary" href="{{ route('todo.edit', $todo->id) }}">編集</a></td>
         <td>
           {!! Form::open(['route' => ['todo.destroy', $todo->id], 'method' => 'DELETE']) !!}
-            {!! Form::button('<i class="fas fa-trash-alt"></i>', ['class' => 'btn btn-danger', 'type' => 'submit']) !!}
+            {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
           {!! Form::close() !!}
         </td>
       </tr>
