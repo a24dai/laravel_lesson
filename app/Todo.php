@@ -8,7 +8,8 @@ class Todo extends Model
 {
     protected $fillable = [
         'title',
-        'user_id'
+        'user_id',
+        'finished_flg'
     ];
 
     public function getAll($id)

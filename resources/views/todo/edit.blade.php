@@ -6,6 +6,9 @@
   <div class="form-group">
     {!! Form::input('text', 'title', $todo->title, ['required', 'class' => 'form-control']) !!}
   </div>
+  <div class="form-group">
+    {!! Form::checkbox('finished_flg') !!}
+  </div>
   {!! Form::submit('更新', ['class' => 'btn btn-success float-right']) !!}
 {!! Form::close() !!}
 

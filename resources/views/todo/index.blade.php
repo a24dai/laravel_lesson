@@ -9,6 +9,7 @@
   <thead class="thead-light">
     <tr>
       <th>やること</th>
+      <th>進捗</th>
       <th>作成日時</th>
       <th>更新日時</th>
       <th></th>
@@ -19,6 +20,11 @@
     @foreach ($todos as $todo)
       <tr>
         <td class="align-middle">{{ $todo->title }}</td>
+        @if ($todo->finished_flg)
+            <td class="align-middle">完了</td>
+        @else
+            <td class="align-middle">未完了</td>
+        @endif
         <td class="align-middle">{{ $todo->created_at }}</td>
         <td class="align-middle">{{ $todo->updated_at }}</td>
         <td><a class="btn btn-primary" href="{{ route('todo.edit', $todo->id) }}">編集</a></td>
