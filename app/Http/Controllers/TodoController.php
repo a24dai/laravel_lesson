@@ -21,9 +21,16 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $todos = $this->todo->getAll(Auth::id());
+        $input = $request->all();
+        dd($input);
+        $userId = Auth::id(); 
+        if (empty($input)) {
+            $todos = $this->todo->getAll($userId);
+        } else {
+            $todos = $this->todo->fetchSearchedTodo($input['search_word'], $userId);
+        }
         return view('todo.index', compact('todos'));
     }
 

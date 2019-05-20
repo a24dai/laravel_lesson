@@ -2,9 +2,18 @@
 @section ('content')
 
 <h1 class="page-header">ToDo一覧</h1>
+
+{!! Form::open(['route' => 'todo.index', 'method' => 'GET']) !!}
+  <div class="form-group">
+    {!! Form::input('text', 'search_word', null, ['required', 'class' => 'form-control', 'placeholder' => '検索内容']) !!}
+  </div>
+  {!! Form::submit('検索', ['class' => 'btn btn-success']) !!}
+{!! Form::close() !!}
+
 <p class="text-right">
     <a class="btn btn-success" href="/todo/create">ToDoを追加</a>
 </p>
+
 <table class="table">
   <thead class="thead-light">
     <tr>

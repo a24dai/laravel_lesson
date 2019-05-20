@@ -18,11 +18,13 @@ class TodosTableSeeder extends Seeder
                 'title'      => 'Laravel Lessonを終わらせる',
                 'created_at' => Carbon::create(2018, 1, 1),
                 'updated_at' => Carbon::create(2018, 1, 4),
+                'user_id'    => 1,
             ],
             [
                 'title'      => 'レビュー対策をする',
                 'created_at' => Carbon::create(2018, 2, 1),
                 'updated_at' => Carbon::create(2018, 2, 5),
+                'user_id'    => 1,
             ],
         ]);
     }

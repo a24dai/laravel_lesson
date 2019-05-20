@@ -16,5 +16,10 @@ class Todo extends Model
         return $this->where('user_id', $id)->get();
     }
 
+    public function fetchSearchedTodo($searchWord, $id)
+    {
+        return $this->where('title', $searchWord)->where('user_id', $id)->get();
+    }
+
 }
 
