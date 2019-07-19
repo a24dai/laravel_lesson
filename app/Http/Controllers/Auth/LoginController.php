@@ -38,18 +38,8 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    /**
-     * Log the user out of the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function logout(Request $request)
+    protected function loggedOut(Request $request)
     {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-
         return redirect('/login');
     }
 }
