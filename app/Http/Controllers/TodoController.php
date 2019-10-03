@@ -12,8 +12,8 @@ class TodoController extends Controller
 
     public function __construct(Todo $instanceClass)
     {
-        $this->todo = $instanceClass;
         $this->middleware('auth');
+        $this->todo = $instanceClass;
     }
 
     /**
@@ -24,7 +24,8 @@ class TodoController extends Controller
     public function index()
     {
         $todos = $this->todo->getAll(Auth::id());
-        return view('todo.index', compact('todos'));
+        $userName = Auth::user()->name;
+        return view('todo.index', compact('todos', 'userName'));
     }
 
     /**
